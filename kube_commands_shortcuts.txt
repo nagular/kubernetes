@@ -1,0 +1,31 @@
+
+$ kubectl create -f nginx.yml
+
+$ kubectl create -f <dir name> ( if dir contains more yml files )
+
+$ kubectl get pods -o wide (it will display high level of information)
+
+$ kubectl get rs -l nginx-deployment ( to list all the replicasets which this deployment has created )
+
+$ Kubectl describe deployment nginx-deployment ( it will dispaly compleate information)
+
+$ kubectl describe <service name> ( To desplay information about service )
+
+$ kubectl describe <pod name> ( To desplay whole information about the pod )
+
+$ Kubectl scale deployment nginx.yml --replicas=5 ( To sacle up/down od the pods )
+
+$ kubectl delete -f nginx.yml ( To delete yml )  
+
+$ Kubectl logs <pod name> ( To desplay the whole pos logs )
+
+$ kubectl logs -f <pod name> ( for running logs )
+
+$kubctl expose deploy nginx-deployment --name=nginx-service port=80 target-port=80 --type=loadbalancer
+
+$ kubectl edit deploy <deployment name> ( To make any changes [like replicasets or container image version etc] in existing .yml file and once save it, all the configuration would change accordingly )
+
+$ kubectl rollout undo <deployment name> ( To rollout the configuration to old version )
+
+
+
